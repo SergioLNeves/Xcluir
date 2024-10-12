@@ -1,18 +1,18 @@
-package cmd
+package main
 
 import (
+	"github.com/SergioLNeves/Xcluir/config"
 	"github.com/SergioLNeves/Xcluir/handler"
 	"github.com/SergioLNeves/Xcluir/repository"
 	"github.com/SergioLNeves/Xcluir/services"
 	"github.com/gookit/slog"
-	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"log"
 )
 
 func main() {
-	err := godotenv.Load()
+	err := config.LoadEnv()
 	if err != nil {
 		log.Fatalf("Erro ao carregar o arquivo .env: %v", err)
 	}

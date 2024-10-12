@@ -54,7 +54,11 @@ func loadTweetsFromFile(filename string) ([]domain.Tweet, error) {
 	}
 
 	var tweets []domain.Tweet
+	deleteCount := 0
 	for _, tweetMap := range tweetsFile {
+		if deleteCount >= 10 {
+			break
+		}
 		tweetData := tweetMap["tweet"]
 		id := tweetData["id_str"].(string)
 
