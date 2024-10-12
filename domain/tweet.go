@@ -1,7 +1,7 @@
 package domain
 
 type Tweet struct {
-	ID string `json:"id"`
+	ID string `json:"id_str"`
 }
 
 type TweetFile struct {
